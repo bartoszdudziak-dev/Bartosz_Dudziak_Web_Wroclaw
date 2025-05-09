@@ -1,6 +1,6 @@
 import type { ProductsListType } from "@/types/product";
 import ProductItem from "./ProductItem";
-import "./ProductList.style.css";
+import "./ProductList.styles.css";
 
 type ProdcutListProps = { products: ProductsListType };
 

@@ -1,0 +1,29 @@
+.table {
+  border-collapse: collapse;
+  margin-block: 1rem;
+}
+
+.row {
+  background-color: rgb(230, 230, 230);
+  border-top: 2px solid black;
+  border: 1px solid black;
+}
+
+.cell-head {
+  min-width: 8em;
+}
+
+.cell {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.cell-actions {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+}
+
+.cell-total {
+  font-weight: bold;
+}

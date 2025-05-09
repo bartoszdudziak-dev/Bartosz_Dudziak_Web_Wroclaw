@@ -1,5 +1,13 @@
+import CartTable from "@/components/Cart/CartTable";
+
 function CartPage() {
-  return <h1>Cart Page</h1>;
+  return (
+    <section>
+      <h1>Cart Page</h1>
+
+      <CartTable />
+    </section>
+  );
 }
 
 export default CartPage;
