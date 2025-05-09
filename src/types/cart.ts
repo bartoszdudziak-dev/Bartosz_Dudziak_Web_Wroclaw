@@ -12,7 +12,6 @@ export type CartContextType = {
   isInCart: (id: number) => boolean;
   increaseQuantity: (id: number) => void;
   decreaseQuantity: (id: number) => void;
-  getTotalPrice: () => string;
 };
 
 export type CartAction =

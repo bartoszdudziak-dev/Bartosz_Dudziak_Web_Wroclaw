@@ -1,12 +1,12 @@
 import type { ProductsListType } from "@/types/product";
-import ProdcutList from "@/components/ProductsList";
 import productsApiUrl from "@/utils/consts/productsApiUrl";
-import { Link } from "react-router";
+import ProdcutList from "@/components/ProductsList";
+import LinkButton from "@/components/LinkButton";
 import { useFetch } from "@/hooks/useFetch";
 import { useCart } from "@/hooks/useCart";
 
 function ProductsPage() {
-  const { items } = useCart();
+  const { items = [] } = useCart();
 
   const {
     data: products,
@@ -28,9 +28,9 @@ function ProductsPage() {
 
       {products && !isLoading && !error && <ProdcutList products={products} />}
 
-      <Link to="/cart">
-        <button disabled={items.length === 0}>Przejdź do koszyka</button>
-      </Link>
+      <LinkButton to="/cart" disabled={items.length === 0}>
+        Przejdź do koszyka
+      </LinkButton>
     </section>
   );
 }
