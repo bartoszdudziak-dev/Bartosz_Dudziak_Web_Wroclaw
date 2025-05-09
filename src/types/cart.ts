@@ -6,8 +6,10 @@ export type CartState = {
   items: CartItem[];
 };
 export type CartContextType = {
-  state: CartState;
-  dispatch: React.Dispatch<CartAction>;
+  items: CartItem[];
+  addToCart: (product: Product) => void;
+  removeFromCart: (id: number) => void;
+  isInCart: (id: number) => boolean;
 };
 
 export type CartAction =
@@ -17,12 +19,12 @@ export type CartAction =
   | QuantityDecreased;
 
 type ItemAdded = { type: "item/added"; payload: { item: Product } };
-type ItemRemoved = { type: "item/removed"; payload: { id: number } };
+type ItemRemoved = { type: "item/removed"; payload: number };
 type QuantityIcreased = {
   type: "item/quantity/increased";
-  payload: { id: number };
+  payload: number;
 };
 type QuantityDecreased = {
   type: "item/quantity/decreased";
-  payload: { id: number };
+  payload: number;
 };

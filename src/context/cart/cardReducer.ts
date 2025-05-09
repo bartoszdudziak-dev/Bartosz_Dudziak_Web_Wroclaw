@@ -13,7 +13,7 @@ function cartReducer(state: CartState, action: CartAction): CartState {
     }
 
     case "item/removed": {
-      const { id } = action.payload;
+      const id = action.payload;
 
       return {
         ...state,
@@ -22,7 +22,7 @@ function cartReducer(state: CartState, action: CartAction): CartState {
     }
 
     case "item/quantity/increased": {
-      const { id } = action.payload;
+      const id = action.payload;
 
       return {
         ...state,
@@ -33,7 +33,7 @@ function cartReducer(state: CartState, action: CartAction): CartState {
     }
 
     case "item/quantity/decreased": {
-      const { id } = action.payload;
+      const id = action.payload;
 
       return {
         ...state,

@@ -4,21 +4,24 @@ import ProductsPage from "./pages/products";
 import SummaryPage from "./pages/summary";
 import CartPage from "./pages/cart";
 import NotFoundPage from "./pages/not-found";
+import CartProvider from "./context/cart/CartProvider";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<RootLayout />}>
-          <Route index element={<Navigate to="products" replace />} />
-          <Route path="products" element={<ProductsPage />} />
-          <Route path="summary" element={<SummaryPage />} />
-          <Route path="cart" element={<CartPage />} />
-        </Route>
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<RootLayout />}>
+            <Route index element={<Navigate to="products" replace />} />
+            <Route path="products" element={<ProductsPage />} />
+            <Route path="summary" element={<SummaryPage />} />
+            <Route path="cart" element={<CartPage />} />
+          </Route>
 
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

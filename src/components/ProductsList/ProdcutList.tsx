@@ -1,13 +1,12 @@
-import type { Product } from "@/types/product";
+import type { ProductsListType } from "@/types/product";
 import ProductItem from "./ProductItem";
+import "./ProductList.style.css";
 
-type ProdcutListProps = { products: Product[] };
+type ProdcutListProps = { products: ProductsListType };
 
 function ProdcutList({ products }: ProdcutListProps) {
-  if (!products) return null;
-
   return (
-    <ul>
+    <ul className="product-list">
       {products.map((product) => (
         <ProductItem key={product.id} product={product} />
       ))}

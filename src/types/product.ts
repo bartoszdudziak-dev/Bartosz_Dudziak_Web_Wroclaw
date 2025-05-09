@@ -8,3 +8,5 @@ export type Product = {
   name: string;
   price: Price;
 };
+
+export type ProductsListType = Product[];
