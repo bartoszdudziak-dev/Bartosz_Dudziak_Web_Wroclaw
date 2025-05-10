@@ -1,3 +1,3 @@
-import ProdcutList from "./ProdcutList";
+import ProdcutsList from "./ProductsList";
 
-export default ProdcutList;
+export default ProdcutsList;

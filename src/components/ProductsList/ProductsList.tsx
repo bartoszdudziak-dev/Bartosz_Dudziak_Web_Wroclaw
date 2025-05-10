@@ -1,10 +1,10 @@
 import type { ProductsListType } from "@/types/product";
 import ProductItem from "./ProductItem";
-import "./ProductList.styles.css";
+import "./ProductsList.styles.css";
 
-type ProdcutListProps = { products: ProductsListType };
+type ProdcutsListProps = { products: ProductsListType };
 
-function ProdcutList({ products }: ProdcutListProps) {
+function ProdcutsList({ products }: ProdcutsListProps) {
   return (
     <ul className="product-list">
       {products.map((product) => (
@@ -14,4 +14,4 @@ function ProdcutList({ products }: ProdcutListProps) {
   );
 }
 
-export default ProdcutList;
+export default ProdcutsList;
