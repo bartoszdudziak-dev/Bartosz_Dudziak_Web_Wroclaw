@@ -5,11 +5,12 @@ import SummaryPage from "../../pages/summary";
 import CartPage from "../../pages/cart";
 import NotFoundPage from "../../pages/not-found";
 import CartProvider from "../../context/cart/CartProvider";
+import baseName from "@/utils/consts/baseName";
 
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={baseName}>
         <Routes>
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Navigate to="products" replace />} />

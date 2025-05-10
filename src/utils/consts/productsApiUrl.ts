@@ -1,1 +1,3 @@
-export default "/data/products.json";
+import baseName from "./baseName";
+
+export default `${baseName}/data/products.json`;
