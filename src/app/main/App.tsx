@@ -1,10 +1,10 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
-import RootLayout from "./ui/RootLayout/RootLayout";
-import ProductsPage from "./pages/products";
-import SummaryPage from "./pages/summary";
-import CartPage from "./pages/cart";
-import NotFoundPage from "./pages/not-found";
-import CartProvider from "./context/cart/CartProvider";
+import RootLayout from "../../ui/RootLayout/RootLayout";
+import ProductsPage from "../../pages/products";
+import SummaryPage from "../../pages/summary";
+import CartPage from "../../pages/cart";
+import NotFoundPage from "../../pages/not-found";
+import CartProvider from "../../context/cart/CartProvider";
 
 function App() {
   return (

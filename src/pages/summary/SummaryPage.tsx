@@ -1,9 +1,16 @@
 import LinkButton from "@/components/LinkButton";
 import SummaryTable from "@/components/SummaryTable";
 import { useCart } from "@/hooks/useCart";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 function SummaryPage() {
+  const { setItem } = useLocalStorage("items");
   const { items = [] } = useCart();
+
+  const handlePlaceOrder = () => {
+    setItem(items);
+    window.location.href = "/confirmation";
+  };
 
   return (
     <section>
@@ -16,7 +23,7 @@ function SummaryPage() {
       ) : (
         <>
           <SummaryTable items={items} />
-          <LinkButton to="/">Złóż zamówienie</LinkButton>
+          <button onClick={handlePlaceOrder}>Złóż zamówienie</button>
         </>
       )}
     </section>
