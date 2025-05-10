@@ -4,26 +4,15 @@ import ProdcutsList from "@/components/ProductsList";
 import LinkButton from "@/components/LinkButton";
 import { useFetch } from "@/hooks/useFetch";
 import { useCart } from "@/hooks/useCart";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
-import { useEffect } from "react";
 
 function ProductsPage() {
   const { items = [] } = useCart();
-  const { getItem, removeItem } = useLocalStorage("items");
 
   const {
     data: products,
     isLoading,
     error,
   } = useFetch<ProductsListType>(productsApiUrl);
-
-  useEffect(() => {
-    const items = getItem();
-
-    if (!items) return;
-
-    removeItem();
-  }, [items, removeItem, getItem]);
 
   return (
     <section>

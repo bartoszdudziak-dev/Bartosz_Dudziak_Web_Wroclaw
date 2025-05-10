@@ -5,8 +5,20 @@ import SummaryPage from "../../pages/summary";
 import CartPage from "../../pages/cart";
 import NotFoundPage from "../../pages/not-found";
 import CartProvider from "../../context/cart/CartProvider";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { useEffect } from "react";
 
 function App() {
+  const { getItem, removeItem } = useLocalStorage("items");
+
+  useEffect(() => {
+    const items = getItem();
+
+    if (!items) return;
+
+    removeItem();
+  }, [removeItem, getItem]);
+
   return (
     <CartProvider>
       <HashRouter>
