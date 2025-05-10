@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router";
+import { HashRouter, Navigate, Route, Routes } from "react-router";
 import RootLayout from "../../ui/RootLayout/RootLayout";
 import ProductsPage from "../../pages/products";
 import SummaryPage from "../../pages/summary";
@@ -9,7 +9,7 @@ import CartProvider from "../../context/cart/CartProvider";
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Navigate to="products" replace />} />
@@ -20,7 +20,7 @@ function App() {
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </CartProvider>
   );
 }
