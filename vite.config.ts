@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react()],
+  base: "/Bartosz_Dudziak_Web_Wroclaw/",
   build: {
     rollupOptions: {
       input: {
