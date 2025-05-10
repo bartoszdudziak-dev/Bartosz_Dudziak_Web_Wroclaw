@@ -27,7 +27,7 @@ function cartReducer(state: CartState, action: CartAction): CartState {
       return {
         ...state,
         items: state.items.map((item) =>
-          item.id === id ? { ...item, quantity: item.quantity++ } : item
+          item.id === id ? { ...item, quantity: item.quantity + 1 } : item
         ),
       };
     }
@@ -38,7 +38,7 @@ function cartReducer(state: CartState, action: CartAction): CartState {
       return {
         ...state,
         items: state.items.map((item) =>
-          item.id === id ? { ...item, quantity: item.quantity-- } : item
+          item.id === id ? { ...item, quantity: item.quantity - 1 } : item
         ),
       };
     }
