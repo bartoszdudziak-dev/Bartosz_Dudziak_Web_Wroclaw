@@ -2,7 +2,6 @@ import LinkButton from "@/components/LinkButton";
 import SummaryTable from "@/components/SummaryTable";
 import { useCart } from "@/hooks/useCart";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
-import baseName from "@/utils/consts/baseName";
 
 function SummaryPage() {
   const { setItem } = useLocalStorage("items");
@@ -10,7 +9,7 @@ function SummaryPage() {
 
   const handlePlaceOrder = () => {
     setItem(items);
-    window.location.href = `${baseName}/confirmation`;
+    window.location.href = `${import.meta.env.BASE_URL}/confirmation`;
   };
 
   return (

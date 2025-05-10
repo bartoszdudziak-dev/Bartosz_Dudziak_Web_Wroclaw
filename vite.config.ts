@@ -1,10 +1,11 @@
 import path from "path";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import { ghPages } from "vite-plugin-gh-pages";
 
 export default defineConfig({
-  plugins: [react()],
-  base: "/Bartosz_Dudziak_Web_Wroclaw/",
+  plugins: [react(), ghPages()],
+  base: "/Bartosz_Dudziak_Web_Wroclaw",
   build: {
     rollupOptions: {
       input: {

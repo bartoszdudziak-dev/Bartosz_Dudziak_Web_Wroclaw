@@ -1,3 +1,1 @@
-import baseName from "./baseName";
-
-export default `${baseName}/data/products.json`;
+export default `${import.meta.env.BASE_URL}/data/products.json`;

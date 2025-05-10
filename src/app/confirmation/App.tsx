@@ -1,11 +1,10 @@
 import ConfirmationPage from "@/pages/confirmation";
 import RootLayout from "@/ui/RootLayout/RootLayout";
-import baseName from "@/utils/consts/baseName";
 import { BrowserRouter, Route, Routes } from "react-router";
 
 function App() {
   return (
-    <BrowserRouter basename={baseName}>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route path="confirmation" element={<ConfirmationPage />} />

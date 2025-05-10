@@ -1,20 +1,18 @@
 import SummaryTable from "@/components/SummaryTable";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import type { CartItem } from "@/types/cart";
-import baseName from "@/utils/consts/baseName";
-
-const productsUrl = `${baseName}/products`;
 
 function ConfirmationPage() {
   const { getItem } = useLocalStorage("items");
 
   const handleClick = () => {
-    window.location.href = productsUrl;
+    window.location.href = import.meta.env.BASE_URL;
   };
 
   const items: CartItem[] = getItem();
 
-  if (!items || items.length === 0) window.location.href = productsUrl;
+  if (!items || items.length === 0)
+    window.location.href = import.meta.env.BASE_URL;
 
   return (
     <section>
